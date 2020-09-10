@@ -6,7 +6,6 @@ const IndexPage = () => (
     <h1>Hello Next.js 👋</h1>
     <p>NODE_ENV:{process.env.NODE_ENV}</p>
     <p>CUSTOM_ENV:{process.env.CUSTOM_ENV}</p>
-    <p>{JSON.stringify(process.env)}</p>
     <p>
       <Link href="/about">
         <a>About</a>

@@ -1,41 +1,33 @@
-# TypeScript Next.js example
 
-This is a really simple project that shows the usage of Next.js with TypeScript.
 
-## Deploy your own
+|          | Production | Preview     |
+| -------- | ---------- | ----------- |
+| NODE_ENV | roduction  | development |
 
-Deploy the example using [Vercel](https://vercel.com):
+```js
+const nextConfig = {
+    env:{
+        CUSTOM_ENV: process.env.NODE_ENV
+    }
+}
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/vercel/next.js/tree/canary/examples/with-typescript)
-
-## How to use it?
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-typescript with-typescript-app
-# or
-yarn create next-app --example with-typescript with-typescript-app
+module.exports = nextConfig
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/import?filter=next.js&utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+### preview
 
-## Notes
+NODE_ENV：production
 
-This example shows how to integrate the TypeScript type system into Next.js. Since TypeScript is supported out of the box with Next.js, all we have to do is to install TypeScript.
+CUSTOM_ENV：development
 
-```
-npm install --save-dev typescript
-```
+### master
 
-To enable TypeScript's features, we install the type declarations for React and Node.
+NODE_ENV：production
 
-```
-npm install --save-dev @types/react @types/react-dom @types/node
-```
+CUSTOM_ENV：development
 
-When we run `next dev` the next time, Next.js will start looking for any `.ts` or `.tsx` files in our project and builds it. It even automatically creates a `tsconfig.json` file for our project with the recommended settings.
+### deploy
 
-Next.js has built-in TypeScript declarations, so we'll get autocompletion for Next.js' modules straight away.
+NODE_ENV：production
 
-A `type-check` script is also added to `package.json`, which runs TypeScript's `tsc` CLI in `noEmit` mode to run type-checking separately. You can then include this, for example, in your `test` scripts.
+CUSTOM_ENV：production
